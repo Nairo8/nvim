@@ -56,14 +56,14 @@ autocmd({ "VimResized" }, {
   end,
 })
 
--- Open help window in a vertical split to the right.
-autocmd("BufWinEnter", {
-  group = augroup("help_window_right"),
-  pattern = { "*.txt", "*.md" },
-  callback = function()
-    if vim.o.filetype == "help" then vim.cmd.wincmd("L") end
-  end,
-})
+-- -- Open help window in a vertical split to the right.
+-- autocmd("BufWinEnter", {
+--   group = augroup("help_window_right"),
+--   pattern = { "*.txt", "*.md" },
+--   callback = function()
+--     if vim.o.filetype == "help" then vim.cmd.wincmd("L") end
+--   end,
+-- })
 
 -- tweaked highlight color
 autocmd({ "ColorScheme","VimEnter" }, {

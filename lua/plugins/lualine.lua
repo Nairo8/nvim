@@ -23,7 +23,15 @@ return {
       },
       lualine_b = {
         {'branch', separator = {left = '', right = ''}},
-        {'diff', separator = {left = '', right = ''}},
+        {'diff',
+          padding = 0,
+          separator = {left = '', right = ''},
+          symbols = {
+            added = icons.git.added,
+            modified = icons.git.modified,
+            removed = icons.git.removed,
+          }
+        },
       },
       lualine_c = {
         {"diagnostics", padding = {left = 1, right = 0},
@@ -35,7 +43,7 @@ return {
           }
         },
         {"filetype", icon_only = true, padding = {left = 1, right = 0}},
-        {"filename", path = 1, padding = {left = 0, right = 0},
+        {"filename", path = 1, padding = 0,
           symbols = {
             modified = icons.filestatus.Modified,
             readonly = icons.filestatus.Readonly,
@@ -46,11 +54,11 @@ return {
       lualine_x = {
       },
       lualine_y = {
-        {"progress", padding = {left = 0, right = 1}, separator = {left = '', right = ''}},
-        {"location", padding = {left = 0, right = 1}},
+        {"progress", padding = 0, separator = {left = '', right = ''}},
+        {"location", padding = 1},
       },
       lualine_z = {
-        {"' '", padding = {left = 0, right = 0}, separator = {left = '', right = ''}},
+        {"' '", padding = 0, separator = {left = '', right = ''}},
         {"datetime", style = ("%H:%M"), padding = {left = 0, right = 1}},
       },
     },
@@ -60,9 +68,8 @@ return {
         {"buffers",
           mode = 2,
           hide_filename_extension = true,
-          max_length = vim.o.columns * 7/8,
+          max_length = vim.o.columns,
           symbols = {alternate_file = ""},
-          padding = {left = 1, right = 1},
         },
       },
       lualine_c = {},
